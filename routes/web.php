@@ -21,7 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(
-    [],
+    ['middleware' => 'auth'],
     function () {
         // маршрут для ресурсного контроллера TaskController
         Route::resource('tasks', TaskController::class);
